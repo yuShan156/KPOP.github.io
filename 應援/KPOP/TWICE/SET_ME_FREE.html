@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TWICE 應援練習室</title>
+    <style>
+        :root {
+            --twice-pink: #FF5FA2;
+            --twice-orange: #FF9472;
+            --bg-dark: #0b0f1a;
+            --glass: rgba(30, 41, 59, 0.4);
+        }
+
+        body {
+            margin: 0;
+            background-color: var(--bg-dark);
+            color: #f8fafc;
+            font-family: 'Inter', system-ui, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* 導覽列 */
+        .page-nav {
+            width: 100%;
+            padding: 20px;
+            background: rgba(11, 15, 26, 0.9);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .back-link {
+            color: var(--twice-pink);
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1rem;
+        }
+
+        /* 影片播放區塊 */
+        .video-container {
+            width: 90%;
+            max-width: 800px;
+            margin: 30px 0;
+            aspect-ratio: 16 / 9;
+            background: #000;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .video-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* 歌曲標題 */
+        .song-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .song-title h1 {
+            font-size: 3.5rem;
+            margin: 0;
+            background: linear-gradient(135deg, var(--twice-pink), var(--twice-orange));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 900;
+        }
+
+        /* 歌詞主區塊 */
+        .lyrics-wrapper {
+            width: 90%;
+            max-width: 800px;
+            background: var(--glass);
+            backdrop-filter: blur(20px);
+            border-radius: 30px;
+            padding: 50px;
+            margin-bottom: 100px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-sizing: border-box;
+        }
+
+        /* 歌詞內容樣式 */
+        .section-label {
+            color: var(--twice-pink);
+            font-size: 0.8rem;
+            font-weight: bold;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+            display: block;
+            text-transform: uppercase;
+        }
+
+        .singer-line {
+            color: #94a3b8;
+            font-size: 1.1rem;
+            margin: 10px 0;
+        }
+
+        .fan-chant {
+            color: var(--twice-orange);
+            font-size: 2rem;
+            font-weight: 900;
+            margin: 15px 0 40px 0;
+            text-shadow: 0 0 15px rgba(255, 148, 114, 0.2);
+        }
+
+        .names-call {
+            text-align: center;
+            font-size: 1.5rem;
+            color: #fff;
+            line-height: 2;
+            font-weight: bold;
+            margin-bottom: 50px;
+        }
+
+        /* 手機適配 */
+        @media (max-width: 600px) {
+            .lyrics-wrapper { padding: 30px 20px; }
+            .song-title h1 { font-size: 2.2rem; }
+            .fan-chant { font-size: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="page-nav">
+        <a href="../index.html" class="back-link">← 返回首頁</a>
+    </nav>
+
+    <header class="song-title">
+        <h1>SET ME FREE</h1>
+    </header>
+
+    <div class="video-container">
+        <iframe 
+            src="https://www.youtube.com/embed/S_o8DwzV_Zg" 
+            title="YouTube video player" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            allowfullscreen>
+        </iframe>
+    </div>
+
+    <main class="lyrics-wrapper">
+        
+        <span class="section-label">Opening Roll Call</span>
+        <p class="names-call">
+            林娜璉！俞定延！平井桃！湊崎紗夏！<br>
+            朴志效！名井南！金多賢！孫彩瑛！周子瑜！
+        </p>
+
+        <hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.1); margin: 40px 0;">
+
+        <span class="section-label">Verse 1</span>
+        <p class="singer-line">這是歌手唱的第一句歌詞...</p>
+        <p class="fan-chant">(應援喊這裡！)</p>
+
+        <p class="singer-line">這是歌手唱的第二句歌詞...</p>
+        <p class="fan-chant">(應援喊這裡！)</p>
+
+        <span class="section-label">Chorus</span>
+        <p class="singer-line">I’m gonna set me free, set me free~</p>
+        <p class="fan-chant">(SET ME FREE!)</p>
+
+    </main>
+
+</body>
+</html>
