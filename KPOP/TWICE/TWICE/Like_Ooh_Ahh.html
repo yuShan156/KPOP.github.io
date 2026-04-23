@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TWICE - SET ME FREE 應援練習</title>
+    <style>
+        /* 1. 顏色變數定義 (對應您的 SCSS 變數) */
+        :root {
+            --mark-default: #d63031;  /* 預設：TWICE 粉 */
+            --mark-warning: #f59e0b;  /* 警告：橘色 */
+            --mark-danger: #dfe6e9;   /* 危險：紅色 */
+            --header-gradient: linear-gradient(135deg, #FF5FA2, #FF9472);
+            --bg-dark: #0b0f1a;
+            --text-light: #f8fafc;
+        }
+
+        body {
+            margin: 0;
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            font-family: 'Inter', -apple-system, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* 導覽列與標題 */
+        .page-nav { width: 100%; padding: 20px; box-sizing: border-box; }
+        .back-link { 
+            color: var(--mark-default); 
+            text-decoration: none; 
+            border: 1px solid var(--mark-default); 
+            padding: 6px 12px; 
+            border-radius: 8px; 
+        }
+        
+        .song-header { margin: 40px 0; text-align: center; }
+        .song-header h1 {
+    font-size: 3.5rem;
+    font-weight: 900;
+    margin: 0;
+    background: var(--header-gradient); /* 使用變數 */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+        /* 影片區 */
+        .video-container {
+            width: 90%; max-width: 800px; aspect-ratio: 16/9;
+            border-radius: 20px; overflow: hidden; margin-bottom: 30px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+        }
+        iframe { width: 100%; height: 100%; border: none; }
+
+        /* 歌詞獨立區塊 */
+        .lyrics-wrapper {
+            width: 90%; max-width: 800px;
+            background: #feb4d3;
+            backdrop-filter: blur(20px);
+            border-radius: 30px;
+            padding: 50px 40px;
+            margin-bottom: 100px;
+            box-sizing: border-box;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        /* --------------------------------------------------
+           核心：依照您的 SCSS 邏輯編寫的 CSS (.under 系列)
+        -------------------------------------------------- */
+        /* --- 粗螢光筆樣式 (Thick Version) --- */
+.lyrics-wrapper mark.thick {
+    padding: 2px 6px;         /* 增加左右內距，讓筆觸更厚 */
+    border-radius: 4px 4px 0px 0px;       /* 稍微圓角比較像麥克筆 */
+    background: none;         /* 清除預設背景 */
+    background-color: var(--mark-default); /* 使用預設顏色變數 */
+    color: #ffffff;           /* 粗螢光筆通常配黑色文字最清晰 */
+    font-weight: 900;
+    display: inline-block;
+    line-height: 1.3;
+    border-bottom: none;      /* 確保沒有底線 */
+}
+
+/* 粗螢光筆的顏色變化 */
+.lyrics-wrapper mark.thick.warning {
+    background-color: var(--mark-warning);
+}
+
+.lyrics-wrapper mark.thick.danger {
+    background-color: var(--mark-danger);
+    color: #a7a7a8;
+}
+
+        .lyrics-wrapper mark.under {
+            padding: 0px;             /* 依照要求：0px */
+            border-radius: 0px;       /* 依照要求：0px */
+            background: none;         /* 依照要求：none */
+            background-color: transparent; /* 依照要求：none */
+            color: inherit;           /* 繼承原本文字顏色 */
+            
+            /* 預設下底線 */
+            border-bottom: 3px solid var(--mark-default); 
+            display: inline-block;
+            line-height: 1.2;
+            margin: 0 2px;
+        }
+
+        .lyrics-wrapper mark.under.warning {
+            border-bottom: 3px solid var(--mark-warning); /* $mark-warning */
+        }
+
+        .lyrics-wrapper mark.under.danger {
+            border-bottom: 3px solid var(--mark-danger);  /* $mark-danger */
+        }
+
+        /* 應援文字排版 */
+        .section-label { color: var(--mark-default); font-size: 0.8rem; letter-spacing: 2px; display: block; margin-bottom: 20px; }
+        .fan-chant { font-size: 2.2rem; font-weight: 800; margin: 20px 0; }
+        .names-call { text-align: center; font-size: 1.4rem; line-height: 2.5; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+    <nav class="page-nav">
+        <a href="../index.html" class="back-link">← BACK</a>
+    </nav>
+
+    <header class="song-header">
+        <h1>SET ME FREE</h1>
+    </header>
+
+    <div class="video-container">
+        <iframe src="https://www.youtube.com/embed/w4cTYnOPdNk?rel=0"></iframe>
+    </div>
+
+    <main class="lyrics-wrapper">
+        <div class="section-box">
+            <span class="section-label">intro</span>
+            <p >
+                <mark class="thick danger">前奏開始播放後  三個八拍 </mark><br>
+                <mark class="thick defult">[Ki! 大！流！搜！ 特！哇！意！思！]</mark>
+            </p>
+        </div>
+
+        <!-- <hr style="border: 0; border-top: 1px solid rgb(1, 1, 1); margin: 40px 0;"> -->
+
+        <div class="section-box">
+            <span class="section-label">Verse 1</span>
+            <p style="color: #2d3436; font-size: 1.2rem;">모두 나를 가지고 <br>
+매일 가만 안 두죠 <br>
+내가 너무 예쁘죠 <br>
+나 때문에 다 힘들죠<br>
+어딜 걷고 있어도<br>
+빨간 바닥인거죠<br>
+Red carpet 같은 기분<br>
+모두 날 쳐다 보죠 oh </p>
+<span class="section-label">Refrain</span>
+            <p style="color: #ffffff; font-size: 1.2rem;">어떤 사람은 어머님이 누구냐고<br>
+신선하게 말 걸어도<br>
+아무 느낌이 안 들죠<br>
+하지만 나도 누군가 하고 사랑에<br>
+빠져보고 싶어 baby<br>
+잘 들어요 내 boy</p>
+
+<span class="section-label">Pre-Chorus</span>
+            <p style="color: #2d3436; font-size: 1.2rem;">단 한번도 느껴본 적 없는 걸
+알게 해주는<br>
+<mark class="under">사람 기다리고 있는 걸<mark class="thick defult">撒郎KI搭哩狗衣能勾</mark></mark> <br>
+얼마가 돼도 推斗 기다리고 싶어 溪坡<br>
+I just wanna fall in love
+</p>
+
+<span class="section-label">Chorus</span>
+            <p style="color: #ffffff; font-size: 1.2rem;">어떻게 내가 움직일 수 없게<br>
+날 ooh ahh ooh ahh 하게 만들어줘<br>
+가짜 가짜 진심 없는 가짜<br>
+잘 가 잘 가 huh <br>
+Ooh- ahh하게 哈給<br>
+어떻게 이제 더 할말이 없게<br>
+날 ooh ahh ooh ahh 하게 만들어줘<br>
+Bla la la la 말만하지 말고<br>
+느껴지게 huh <br>
+Ooh- ahh하게 哈給<br>
+</p>
+<span class="section-label">Verse 2</span>
+            <p style="color: #ffffff; font-size: 1.2rem;">날 봐 八 거봐 八 또 두 번 봐<br>
+한번 지나치고 등을 돌려 쳐다봐 TWICE <br>
+어딜 가더라도 항상 민 낯<br>
+하지만 내가 제일 빛나 冰那<br>
+낮은 신발 신어도 가치는 high<br>
+</p>
+<span class="section-label">Refrain</span>
+            <p style="color: #ffffff; font-size: 1.2rem;">머릿속엔 늘 영화 속 같은 la la la <br>
+장면들이 지나가네 생각만해도 떨리네 yeah<br>
+이제는 나도 누군가 하고 사랑에 <br>
+빠져 보고 싶어 baby <br>
+잘 들어요 내 boy <br>
+</p>
+<span class="section-label">Pre-Chorus</span>
+            <p style="color: #ffffff; font-size: 1.2rem;">단 한번도 느껴본 적 없는 걸<br>
+알게 해주는<br>
+사람 기다리고 있는 걸 撒郎KI搭哩狗衣能勾<br>
+얼마가 돼도 推斗 기다리고 싶어 溪坡<br>
+I just wanna fall in love<br>
+</p>
+<span class="section-label">Chorus</span>
+            <p style="color: #ffffff; font-size: 1.2rem;">어떻게 내가 움직일 수 없게<br>
+날 ooh ahh ooh ahh 하게 만들어줘<br>
+가짜 가짜 진심 없는 가짜<br>
+잘 가 잘 가 huh <br>
+Ooh- ahh하게 哈給<br>
+어떻게 이제 더 할말이 없게<br>
+날 ooh ahh ooh ahh 하게 만들어줘<br>
+Bla la la la 말만하지 말고<br>
+느껴지게 huh <br>
+Ooh- ahh하게 哈給<br>
+</p>
+<span class="section-label">Bridge</span>
+            <p style="color: #ffffff; font-size: 1.2rem;">아무하고 만나 시작하기 싫어<br>
+쉽지 않은 여자 그게 나인걸<br>
+</p>
+<span class="section-label">Breakdown</span>
+            <p style="color: #ffffff; font-size: 1.2rem;">Let me see<br>
+How you gon treat me<br>
+I ain't no easy<br>
+Better think about it twice<br>
+Let me see<br>
+How you gon treat me<br>
+I ain't no easy<br>
+Better think about it twice<br>
+</p>
+<span class="section-label">Chorus</span>
+            <p style="color: #ffffff; font-size: 1.2rem;">어떻게 내가 움직일 수 없게<br>
+날 ooh ahh ooh ahh 하게 만들어줘<br>
+가짜 가짜 진심 없는 가짜<br>
+잘 가 잘 가 huh <br>
+Ooh- ahh하게 哈給<br>
+어떻게 이제 더 할말이 없게<br>
+날 ooh ahh ooh ahh 하게 만들어줘<br>
+Bla la la la 말만하지 말고<br>
+느껴지게 huh <br>
+Ooh- ahh하게 哈給<br>
+</p>
+            <p class="fan-chant">
+                <mark class="under">SET ME FREE!</mark>
+            </p>
+        </div>
+    </main>
+
+</body>
+</html>
